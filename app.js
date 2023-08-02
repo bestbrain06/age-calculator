@@ -115,39 +115,39 @@ function submit() {
 
     // checking the months with 30 days
 
-    /*  if (
-      monthInput.value == 4 ||
-      monthInput.value == 6 ||
-      monthInput.value == 9 ||
-      monthInput.value == 11
+    if (
+      (monthInput.value == 4 ||
+        monthInput.value == 6 ||
+        monthInput.value == 9 ||
+        monthInput.value == 11) &&
+      dayInput.value > 30
     ) {
-      dayInput.value === 31;
+      dayInput.value == 31;
       dayError.textContent = "Must be a valid date";
       dayOutput.textContent = "--";
       monthOutput.textContent = "--";
       yearOutput.textContent = "--";
-    } */
+    }
 
     // checking for months with 28 days
-    /* 
-    if (monthInput.value == 2) {
-      dayInput.value > 30;
+
+    if (monthInput.value == 2 && dayInput.value > 28) {
       console.log("hello");
       dayError.textContent = "Must be a valid date";
       dayOutput.textContent = "--";
       monthOutput.textContent = "--";
       yearOutput.textContent = "--";
-    } */
+    }
 
     // checking for leap year
-    /*   if (yearInput.value % 4 == 0 && monthInput.value == 2) {
-      console.log("hi");
+    if (yearInput.value % 4 == 0 && monthInput.value == 2) {
       dayInput.value === 29;
+      console.log("hi");
       dayError.textContent = "";
       dayOutput.innerHTML = currentDay - userDay + 30;
       monthOutput.innerHTML = currentMonth - userMonth;
       yearOutput.innerHTML = currentYear - userYear;
-    } */
+    }
 
     if (dayInput.value && monthInput.value && yearInput.value) {
       btn.disabled = true;
