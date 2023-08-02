@@ -115,7 +115,7 @@ function submit() {
 
     // checking the months with 30 days
 
-    if (
+    /*  if (
       monthInput.value == 4 ||
       monthInput.value == 6 ||
       monthInput.value == 9 ||
@@ -126,17 +126,18 @@ function submit() {
       dayOutput.textContent = "--";
       monthOutput.textContent = "--";
       yearOutput.textContent = "--";
-    }
+    } */
 
     // checking for months with 28 days
-
-    if (monthInput.value == 2 && dayInput.value == 29) {
+    /* 
+    if (monthInput.value == 2) {
+      dayInput.value > 30;
       console.log("hello");
       dayError.textContent = "Must be a valid date";
       dayOutput.textContent = "--";
       monthOutput.textContent = "--";
       yearOutput.textContent = "--";
-    }
+    } */
 
     // checking for leap year
     /*   if (yearInput.value % 4 == 0 && monthInput.value == 2) {
