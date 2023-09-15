@@ -28,6 +28,19 @@ form.addEventListener("submit", (e) => {
 
   // the isValidYear function
   isValidYear();
+
+  // output of the user days
+  userDays();
+
+  // output of the user months
+
+  userMonths();
+
+  // output of the user years
+
+  userYears();
+
+  // monthWith30Days();
 });
 
 function showError(input, message) {
@@ -113,63 +126,94 @@ let userDay = document.getElementById("day").value;
 let userYear = document.getElementById("year").value;
 let userMonth = document.getElementById("month").value;
 
+let userValue = dayInput.value && monthInput.value && yearInput;
+
 // calculating the user days
-if (dayInput.value && monthInput.value && yearInput) {
-  if (currentDay < userDay) {
-    dayOutput.innerHTML = currentDay - userDay + 30;
-    currentMonth = currentMonth - 1;
-  } else {
-    dayOutput.innerHTML = currentDay - userDay;
+
+function userDays() {
+  if (userValue) {
+    if (currentDay < userDay) {
+      dayOutput.textContent = currentDay - userDay + 30;
+      currentMonth = currentMonth - 1;
+    } else {
+      dayOutput.textContent = currentDay - userDay;
+    }
   }
 }
 
 // calculatingthe user months
-if (monthInput.value && dayInput.value && yearInput.value) {
-  if (currentMonth < userMonth) {
-    monthOutput.innerHTML = currentMonth - userMonth + 12;
-    currentYear = currentYear - 1;
-  } else {
-    monthOutput.innerHTML = currentMonth - userMonth;
+
+function userMonths() {
+  if (
+    (monthInput.value == 4 ||
+      monthInput.value == 6 ||
+      monthInput.value == 9 ||
+      monthInput.value == 11) &&
+    dayInput.value > 30
+  ) {
+    showError(dayInput, "Must be a valid date");
+    // outPutError();
+  } else if (userValue) {
+    if (currentMonth < userMonth) {
+      monthOutput.textContent = currentMonth - userMonth + 12;
+      currentYear = currentYear - 1;
+    } else {
+      monthOutput.textContent = currentMonth - userMonth;
+    }
   }
+  // if (userValue) {
+
+  // }
 }
 
 // calculating the user years
-if (yearInput.value && monthInput.value && dayInput.value) {
-  yearOutput.innerHTML = currentYear - userYear;
+
+function userYears() {
+  if (userValue) {
+    yearOutput.textContent = currentYear - userYear;
+  }
 }
 
 // checking the months with 30 days
 
-if (
-  (monthInput.value == 4 ||
-    monthInput.value == 6 ||
-    monthInput.value == 9 ||
-    monthInput.value == 11) &&
-  dayInput.value > 30
-) {
-  dayInput.value == 31;
-  dayError.textContent = "Must be a valid date";
-  dayOutput.textContent = "--";
-  monthOutput.textContent = "--";
-  yearOutput.textContent = "--";
+// function monthWith30Days() {
+//   if (
+//     (monthInput.value == 4 ||
+//       monthInput.value == 6 ||
+//       monthInput.value == 9 ||
+//       monthInput.value == 11) &&
+//     dayInput.value > 30
+//   ) {
+//     showError(dayInput, "Must be a valid date");
+//     // outPutError();
+//   }
+// }
+
+function outPutError() {
+  dayOutput.textContent = "";
+  monthOutput.textContent = "";
+  yearOutput.textContent = "";
 }
 
-// checking for months with 28 days
+// // checking for months with 28 days
 
-if (monthInput.value == 2 && dayInput.value > 28) {
-  console.log("hello");
-  dayError.textContent = "Must be a valid date";
-  dayOutput.textContent = "--";
-  monthOutput.textContent = "--";
-  yearOutput.textContent = "--";
-}
+// if (monthInput.value == 2 && dayInput.value > 28) {
+//   console.log("hello");
+//   dayError.textContent = "Must be a valid date";
+//   dayOutput.textContent = "--";
+//   monthOutput.textContent = "--";
+//   yearOutput.textContent = "--";
+// }
 
-// checking for leap year
-if (yearInput.value % 4 == 0 && monthInput.value == 2) {
-  dayInput.value === 29;
-  console.log("hi");
-  dayError.textContent = "";
-  dayOutput.innerHTML = currentDay - userDay + 30;
-  monthOutput.innerHTML = currentMonth - userMonth;
-  yearOutput.innerHTML = currentYear - userYear;
-}
+// // checking for leap year
+// if (
+//   yearInput.value % 4 == 0 &&
+//   monthInput.value == 2 &&
+//   dayInput.value === 29
+// ) {
+//   console.log("hi");
+//   dayError.textContent = "";
+//   dayOutput.innerHTML = currentDay - userDay + 30;
+//   monthOutput.innerHTML = currentMonth - userMonth;
+//   yearOutput.innerHTML = currentYear - userYear;
+// }
