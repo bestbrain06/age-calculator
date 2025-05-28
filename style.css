@@ -1,0 +1,145 @@
+/* ---------- FONTS ---------- */
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/Poppins-Italic.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/Poppins-ExtraBoldItalic.ttf);
+  font-weight: 800;
+}
+
+/* ---------- VARIABLES ---------- */
+:root {
+  --primary-base: hsl(259, 100%, 65%);
+  --error: hsl(0, 100%, 67%);
+  --grey-tint-100: hsl(0, 0%, 94%);
+  --grey-tint-200: hsl(0, 0%, 86%);
+  --grey-base: hsl(0, 1%, 44%);
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+
+  /* TYPOGRAPHY */
+  --ff: "Poppins", sans-serif;
+  --fs-sm: 1.2rem;
+  --fs-md: 1.6rem;
+  --fs-lg: 2rem;
+  --fs-xl: 2.4rem;
+  --fs-xxl: 2.8rem;
+  --fs-xxxl: 3.2rem;
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-xtra-bold: 800;
+}
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- GLOBAL STYLES ---------- */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--ff);
+  font-size: var(--fs-md);
+
+  background-color: var(--grey-tint-100);
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* ---------- CARD ---------- */
+.card {
+  background-color: var(--white);
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 15px 15px 75px 15px;
+}
+
+.user-inputs-wrapper {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 2rem;
+}
+
+.user-inputs-wrapper > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.label-text {
+  color: var(--grey-base);
+}
+
+.user-input {
+  font-size: var(--fs-xxxl);
+  width: 100%;
+  max-width: 120px;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--grey-tint-200);
+  border-radius: 5px;
+}
+
+.user-input::placeholder {
+  font-size: var(--fs-xl);
+}
+
+.error-message {
+  font-size: var(--fs-sm);
+  color: var(--error);
+}
+
+.line-button-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.line {
+  height: 1px;
+  flex-grow: 1;
+  background-color: var(--grey-tint-200);
+}
+
+.btn-submit {
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--primary-base);
+}
+
+.result-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-text {
+  font-size: 7.2rem;
+  font-style: italic;
+  font-weight: var(--fw-xtra-bold);
+}
+
+.clr-purple {
+  color: var(--primary-base);
+}
