@@ -18,31 +18,39 @@
   <body>
     <div class="container">
       <div class="card">
-        <div>
-          <div>
-            <label for="day">Day</label>
-            <input id="day" placeholder="DD" type="text" />
+        <div class="user-inputs-wrapper">
+          <div class="user-day">
+            <label class="label-text" for="day">Day</label>
+            <input class="user-input" id="day" placeholder="DD" type="text" />
+            <small class="error-message">This field is required</small>
           </div>
 
-          <div>
-            <label for="month">Month</label>
-            <input id="month" placeholder="MM" type="text" />
+          <div class="user-month">
+            <label class="label-text" for="month">Month</label>
+            <input class="user-input" id="month" placeholder="MM" type="text" />
+            <small class="error-message">This field is required</small>
           </div>
 
-          <div>
-            <label for="year">Year</label>
-            <input id="year" placeholder="YYYY" type="text" />
+          <div class="user-year">
+            <label class="label-text" for="year">Year</label>
+            <input
+              class="user-input"
+              id="year"
+              placeholder="YYYY"
+              type="text"
+            />
+            <small class="error-message">This field is required</small>
           </div>
         </div>
 
-        <button>
+        <button class="btn-submit">
           <img src="assets/images/icon-arrow.svg" alt="arrow icon" />
         </button>
 
-        <div>
-          <b><span>--</span>years</b>
-          <b><span>--</span>months</b>
-          <b><span>--</span>days</b>
+        <div class="result-wrapper">
+          <b class="result-text"><span class="clr-purple">--</span>years</b>
+          <b class="result-text"><span class="clr-purple">--</span>months</b>
+          <b class="result-text"><span class="clr-purple">--</span>days</b>
         </div>
       </div>
     </div>
