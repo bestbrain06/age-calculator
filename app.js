@@ -109,7 +109,7 @@ function ageCalc() {
   }
 
   // check for a valid date
-  if (userDay > new Date(birthYear, birthMonth, 0).getDate()) {
+  if (userDay.value > new Date(birthYear, birthMonth, 0).getDate()) {
     displayError(errorDay, "Must be a valid date");
     return;
   }
