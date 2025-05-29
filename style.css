@@ -162,6 +162,11 @@ body {
   color: var(--error);
 }
 
+.user-input:focus.error-input {
+  outline: 0;
+  caret-color: var(--error);
+}
+
 .error-input {
   border: 2px solid var(--error);
 }
