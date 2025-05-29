@@ -143,3 +143,15 @@ body {
 .clr-purple {
   color: var(--primary-base);
 }
+
+.hidden {
+  display: none;
+}
+
+.error-label {
+  color: var(--error);
+}
+
+.error-input {
+  border: 2px solid var(--error);
+}
