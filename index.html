@@ -21,7 +21,7 @@
         <div class="user-inputs-wrapper">
           <div class="user-day">
             <label id="label-day" class="label-text" for="day">Day</label>
-            <input class="user-input" id="day" placeholder="DD" type="text" />
+            <input class="user-input" id="day" placeholder="DD" type="number" />
             <small id="error-day" class="error-message hidden"
               >This field is required</small
             >
@@ -29,7 +29,12 @@
 
           <div class="user-month">
             <label id="label-month" class="label-text" for="month">Month</label>
-            <input class="user-input" id="month" placeholder="MM" type="text" />
+            <input
+              class="user-input"
+              id="month"
+              placeholder="MM"
+              type="number"
+            />
             <small id="error-month" class="error-message hidden"
               >This field is required</small
             >
@@ -41,7 +46,7 @@
               class="user-input"
               id="year"
               placeholder="YYYY"
-              type="text"
+              type="number"
             />
             <small id="error-year" class="error-message hidden"
               >This field is required</small

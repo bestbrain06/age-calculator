@@ -102,6 +102,11 @@ body {
   border-radius: 5px;
 }
 
+.user-input:focus {
+  outline: 2px solid var(--primary-base);
+  caret-color: var(--primary-base);
+}
+
 .user-input::placeholder {
   font-size: var(--fs-xl);
 }
@@ -127,6 +132,11 @@ body {
   border: 0;
   border-radius: 50%;
   background-color: var(--primary-base);
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: var(--black);
 }
 
 .result-wrapper {
