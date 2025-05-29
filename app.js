@@ -91,10 +91,7 @@ function ageCalc() {
   }
 
   // check if the day is valid
-  if (
-    userDay.value < 0 ||
-    userDay.value > new Date(birthYear, birthMonth, 0).getDate()
-  ) {
+  if (userDay.value < 0 || userDay.value > 31) {
     displayError(errorDay, "Must be a valid day");
     return;
   }
@@ -108,6 +105,12 @@ function ageCalc() {
   // check if the year is in the past
   if (userYear.value > currentYear) {
     displayError(errorYear, "Must be in the past");
+    return;
+  }
+
+  // check for a valid date
+  if (userDay > new Date(birthYear, birthMonth, 0).getDate()) {
+    displayError(errorDay, "Must be a valid date");
     return;
   }
 
